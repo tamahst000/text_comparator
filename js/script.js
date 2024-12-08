@@ -83,10 +83,10 @@ function displayDiff(diff) {
   });
 
   resultDiv1.innerHTML = `
-            <div>${diffText1}</div>
+  <div>${diffText1}</div>
   `;
 
   resultDiv2.innerHTML = `
-          <div>${diffText2}</div>
-`;
+  <div>${diffText2}</div>
+  `;
 }
