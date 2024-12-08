@@ -1,3 +1,10 @@
+.col-md-6,
+.col-sm-12 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .char-count {
   font-size: 150%;
   font-weight: bold;
@@ -18,22 +25,6 @@
   justify-content: flex-start;
 }
 
-.diff-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.diff-table th,
-.diff-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.diff-table th {
-  background-color: #f2f2f2;
-}
-
 .diff-add {
   background-color: #e6ffe6;
   color: green;
@@ -42,4 +33,18 @@
 .diff-remove {
   background-color: #ffe6e6;
   color: red;
+}
+
+@media (max-width: 768px) {
+  #text1,
+  #text2 {
+    height: 100px !important;
+  }
+  .char-count {
+    font-size: 80% !important;
+  }
+  .reset-btn {
+    font-size: 80%;
+    padding: 6px 12px;
+  }
 }
