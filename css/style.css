@@ -1,0 +1,19 @@
+.char-count {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.char-count-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.char-count {
+  font-size: 150%;
+  font-weight: bold;
+  justify-content: flex-start;
+}

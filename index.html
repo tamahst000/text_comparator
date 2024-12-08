@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <meta charset="UTF-8" />
+    <title>Text Comparator</title>
+  </head>
+  <body>
+    <nav class="nav navbar-dark bg-dark">
+      <div class="container">
+        <div
+          class="container-fluid d-flex justify-content-between align-items-center"
+        >
+          <i class="bi bi-list" style="font-size: 2rem; color: #f8f9fa"></i>
+          <div class="d-flex">
+            <a class="nav-link text-light" href="/">Home</a>
+            <a class="nav-link text-light" href="/">Link</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div style="display: flex; flex-direction: column; min-height: 80vh">
+      <div class="container">
+        <br />
+        <div class="row">
+          <div class="col-md-10">
+            <h1>Text Comparator</h1>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              <i class="bi bi-pencil-square"></i><strong> テキスト1</strong>
+            </p>
+            <textarea
+              id="text1"
+              style="width: 100%; height: 500px; box-sizing: border-box"
+              placeholder="テキスト1を入力"
+              oninput="updateCount('text1', 'count1')"
+            ></textarea>
+            <div class="char-count-container">
+              <p class="char-count">文字数: <span id="count1">0</span></p>
+              <button
+                class="btn btn-dark reset-btn"
+                onclick="resetText('text1', 'count1')"
+              >
+                <strong>リセット</strong>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <p>
+              <i class="bi bi-pencil-square"></i><strong> テキスト2</strong>
+            </p>
+            <textarea
+              id="text2"
+              style="width: 100%; height: 500px; box-sizing: border-box"
+              placeholder="テキスト2を入力"
+              oninput="updateCount('text2', 'count2')"
+            ></textarea>
+            <div class="char-count-container">
+              <p class="char-count">文字数: <span id="count2">0</span></p>
+              <button
+                class="btn btn-dark reset-btn"
+                onclick="resetText('text2', 'count2')"
+              >
+                <strong>リセット</strong>
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <button class="btn btn-dark" onclick="compareText()">
+          テキスト差分比較
+        </button>
+        <div id="result"></div>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
