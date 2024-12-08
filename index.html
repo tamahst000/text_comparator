@@ -13,7 +13,7 @@
     />
     <link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
     <meta charset="UTF-8" />
-    <link rel="icon" href="./img/samurai3.png">
+    <link rel="icon" href="./img/samurai3.png" />
     <title>Text Comparator</title>
   </head>
   <body>
@@ -51,8 +51,12 @@
               oninput="updateCount('text1', 'count1','count1-without')"
             ></textarea>
             <div class="char-count-container">
-              <p class="char-count">文字数(空白あり): <span id="count1">0</span></p>
-              <p class="char-count">文字数(空白なし): <span id="count1-without">0</span></p>
+              <p class="char-count">
+                文字数(空白あり): <span id="count1">0</span>
+              </p>
+              <p class="char-count">
+                文字数(空白なし): <span id="count1-without">0</span>
+              </p>
               <button
                 class="btn btn-dark reset-btn"
                 onclick="resetText('text1', 'count1','count1-without')"
@@ -72,8 +76,12 @@
               oninput="updateCount('text2', 'count2','count2-without')"
             ></textarea>
             <div class="char-count-container">
-              <p class="char-count">文字数(空白あり): <span id="count2">0</span></p>
-              <p class="char-count">文字数(空白なし): <span id="count2-without">0</span></p>
+              <p class="char-count">
+                文字数(空白あり): <span id="count2">0</span>
+              </p>
+              <p class="char-count">
+                文字数(空白なし): <span id="count2-without">0</span>
+              </p>
               <button
                 class="btn btn-dark reset-btn"
                 onclick="resetText('text2', 'count2','count2-without')"
@@ -91,16 +99,12 @@
         <br />
         <div class="row">
           <div class="col-md-6">
-            <p>
-              <i class="bi bi-blockquote-left"></i><strong> テキスト1</strong>
-              <div id="result1"></div>
-            </p>
+            <i class="bi bi-blockquote-left"></i><strong> テキスト1</strong>
+            <div id="result1"></div>
           </div>
           <div class="col-md-6">
-            <p>
-              <i class="bi bi-blockquote-right"></i><strong> テキスト2</strong>
-              <div id="result2"></div>
-            </p>
+            <i class="bi bi-blockquote-right"></i><strong> テキスト2</strong>
+            <div id="result2"></div>
           </div>
         </div>
         <br />
