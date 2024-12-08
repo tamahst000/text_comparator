@@ -1,23 +1,32 @@
-function updateCount(textareaId, countId) {
+function updateCount(textareaId, countWithSpacesId, countWithoutSpacesId) {
   const textarea = document.getElementById(textareaId);
-  const countSpan = document.getElementById(countId);
-  const textLength = textarea.value.length;
+  const countWithSpacesSpan = document.getElementById(countWithSpacesId);
+  const countWithoutSpacesSpan = document.getElementById(countWithoutSpacesId);
+  const textWithSpacesLength = textarea.value.length;
+  const textWithoutSpacesLength = textarea.value.replace(/\s+/g, "").length;
 
-  countSpan.textContent = textLength;
-  if (textLength > 0) {
-    countSpan.style.color = "red";
+  countWithSpacesSpan.textContent = textWithSpacesLength;
+  countWithoutSpacesSpan.textContent = textWithoutSpacesLength;
+
+  if (textWithoutSpacesLength > 0) {
+    countWithSpacesSpan.style.color = "red";
+    countWithoutSpacesSpan.style.color = "red";
   } else {
-    countSpan.style.color = "";
+    countWithSpacesSpan.style.color = "";
+    countWithoutSpacesSpan.style.color = "";
   }
 }
 
-function resetText(textareaId, countId) {
+function resetText(textareaId, countWithSpacesId, countWithoutSpacesId) {
   const textarea = document.getElementById(textareaId);
-  const countSpan = document.getElementById(countId);
+  const countWithSpacesSpan = document.getElementById(countWithSpacesId);
+  const countWithoutSpacesSpan = document.getElementById(countWithoutSpacesId);
 
   textarea.value = "";
-  countSpan.textContent = "0";
-  countSpan.style.color = "";
+  countWithSpacesSpan.textContent = "0";
+  countWithSpacesSpan.style.color = "";
+  countWithoutSpacesSpan.textContent = "0";
+  countWithoutSpacesSpan.style.color = "";
 }
 
 // TODO: 複数の差分を表示できるようにする

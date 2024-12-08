@@ -47,13 +47,14 @@
               id="text1"
               style="width: 100%; height: 500px; box-sizing: border-box"
               placeholder="テキスト1を入力"
-              oninput="updateCount('text1', 'count1')"
+              oninput="updateCount('text1', 'count1','count1-without')"
             ></textarea>
             <div class="char-count-container">
-              <p class="char-count">文字数: <span id="count1">0</span></p>
+              <p class="char-count">文字数(空白あり): <span id="count1">0</span></p>
+              <p class="char-count">文字数(空白なし): <span id="count1-without">0</span></p>
               <button
                 class="btn btn-dark reset-btn"
-                onclick="resetText('text1', 'count1')"
+                onclick="resetText('text1', 'count1','count1-without')"
               >
                 <strong>リセット</strong>
               </button>
@@ -67,13 +68,14 @@
               id="text2"
               style="width: 100%; height: 500px; box-sizing: border-box"
               placeholder="テキスト2を入力"
-              oninput="updateCount('text2', 'count2')"
+              oninput="updateCount('text2', 'count2','count2-without')"
             ></textarea>
             <div class="char-count-container">
-              <p class="char-count">文字数: <span id="count2">0</span></p>
+              <p class="char-count">文字数(空白あり): <span id="count2">0</span></p>
+              <p class="char-count">文字数(空白なし): <span id="count2-without">0</span></p>
               <button
                 class="btn btn-dark reset-btn"
-                onclick="resetText('text2', 'count2')"
+                onclick="resetText('text2', 'count2','count2-without')"
               >
                 <strong>リセット</strong>
               </button>
