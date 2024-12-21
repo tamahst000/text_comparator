@@ -13,6 +13,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.3/diff2html.min.css"
+    />
     <link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="icon" href="./img/samurai3.png" />
     <title>Text Comparator</title>
@@ -98,19 +103,11 @@
         </button>
         <br />
         <br />
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <i class="bi bi-blockquote-left"></i><strong> テキスト1</strong>
-            <div id="result1"></div>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <i class="bi bi-blockquote-right"></i><strong> テキスト2</strong>
-            <div id="result2"></div>
-          </div>
-        </div>
-        <br />
+        <div id="result"></div>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/3.4.0/diff.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.3/diff2html.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
