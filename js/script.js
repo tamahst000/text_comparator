@@ -29,6 +29,27 @@ function resetText(textareaId, countWithSpacesId, countWithoutSpacesId) {
   countWithoutSpacesSpan.style.color = "";
 }
 
+function copyText(textareaId, buttonId) {
+  var textarea = document.getElementById(textareaId);
+  var button = document.getElementById(buttonId);
+
+  navigator.clipboard
+    .writeText(textarea.value)
+    .then(function () {
+      var popover = new bootstrap.Popover(button, {
+        trigger: "focus",
+      });
+      popover.show();
+
+      setTimeout(function () {
+        popover.hide();
+      }, 1000);
+    })
+    .catch(function (error) {
+      console.error("コピーに失敗しました: ", error);
+    });
+}
+
 function compareText() {
   const text1 = document.getElementById("text1").value;
   const text2 = document.getElementById("text2").value;
