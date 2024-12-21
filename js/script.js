@@ -29,8 +29,6 @@ function resetText(textareaId, countWithSpacesId, countWithoutSpacesId) {
   countWithoutSpacesSpan.style.color = "";
 }
 
-// TODO: 複数の差分を表示できるようにする
-// TODO: 改行、空白も結果に表示できるようにする
 function compareText() {
   const text1 = document.getElementById("text1").value;
   const text2 = document.getElementById("text2").value;
@@ -40,8 +38,8 @@ function compareText() {
 }
 
 function calculateDiff(text1, text2) {
-  const chars1 = text1.split("");
-  const chars2 = text2.split("");
+  const chars1 = text1.split(/(\r\n|\n|\r|\s)/);
+  const chars2 = text2.split(/(\r\n|\n|\r|\s)/);
   const diff = [];
   let i = 0,
     j = 0;
@@ -79,23 +77,31 @@ function displayDiff(diff) {
   diff.forEach((d) => {
     switch (d.type) {
       case "add":
-        diffText1 += `<span class="diff-add">${d.char}</span>`;
+        diffText1 += `<span class="diff-add">${escapeHtml(d.char)}</span>`;
         break;
       case "remove":
-        diffText2 += `<span class="diff-remove">${d.char}</span>`;
+        diffText2 += `<span class="diff-remove">${escapeHtml(d.char)}</span>`;
         break;
       case "same":
-        diffText1 += `<span>${d.char}</span>`;
-        diffText2 += `<span>${d.char}</span>`;
+        diffText1 += `<span>${escapeHtml(d.char)}</span>`;
+        diffText2 += `<span>${escapeHtml(d.char)}</span>`;
         break;
     }
   });
 
-  resultDiv1.innerHTML = `
-  <div>${diffText1}</div>
-  `;
+  resultDiv1.innerHTML = `<div>${diffText1}</div>`;
+  resultDiv2.innerHTML = `<div>${diffText2}</div>`;
+}
 
-  resultDiv2.innerHTML = `
-  <div>${diffText2}</div>
-  `;
+function escapeHtml(str) {
+  const map = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;",
+    "\n": "<br>",
+    " ": "&nbsp;",
+  };
+  return str.replace(/[&<>"'\n\s]/g, (m) => map[m] || m);
 }
